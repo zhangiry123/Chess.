@@ -39,41 +39,37 @@
     <!-- GALLERY TAB -->
     <div id="gallery" class="tab-content">
         <h2>Gallery</h2>
-        <div class="gallery-container">
-            <!-- Images will be added here -->
-        </div>
+        <div class="gallery-container"></div>
     </div>
 
     <!-- BOOKS TAB -->
     <div id="books" class="tab-content">
         <h2>Famous Chess Books</h2>
-        <div class="books-container">
-            <!-- Book images + titles will go here -->
-        </div>
+        <div class="books-container"></div>
     </div>
 
     <!-- OPENINGS TAB -->
     <div id="openings" class="tab-content">
         <h2>Chess Openings</h2>
-        <div class="openings-container">
-            <!-- Openings + summaries will go here -->
-        </div>
+        <div class="openings-container"></div>
     </div>
 
     <script>
         function openTab(tabName) {
             // Hide all tab content
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
 
-            // Remove active class from all buttons
-            const buttons = document.querySelectorAll('.tab-button');
-            buttons.forEach(b => b.classList.remove('active'));
+            // Remove active state from all buttons
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
 
             // Show selected tab
             document.getElementById(tabName).classList.add('active');
 
-            // Highlight selected button
+            // Highlight clicked button
             event.target.classList.add('active');
         }
     </script>
