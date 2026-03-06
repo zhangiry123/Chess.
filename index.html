@@ -8,59 +8,75 @@
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#why">Why is Chess Important</a></li>
-            <li><a href="#how">How is Chess Important</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#books">Famous Books</a></li>
-            <li><a href="#openings">Openings</a></li>
-        </ul>
-    </nav>
+    <!-- TAB NAVIGATION -->
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab('home')">Home</button>
+        <button class="tab-button" onclick="openTab('why')">Why Chess Is Important</button>
+        <button class="tab-button" onclick="openTab('how')">How Chess Is Important</button>
+        <button class="tab-button" onclick="openTab('gallery')">Gallery</button>
+        <button class="tab-button" onclick="openTab('books')">Famous Books</button>
+        <button class="tab-button" onclick="openTab('openings')">Openings</button>
+    </div>
 
-    <!-- HOME SECTION -->
-    <section id="home" class="section home-section">
-        <h1>Chess.</h1>
-        <p class="author">By Zhangir Yestayev</p>
-    </section>
+    <!-- HOME TAB -->
+    <div id="home" class="tab-content active">
+        <h1 class="home-title">Chess.</h1>
+        <p class="home-author">By Zhangir Yestayev</p>
+    </div>
 
-    <!-- WHY IS CHESS IMPORTANT -->
-    <section id="why" class="section">
-        <h2>Why is Chess Important</h2>
-        <p id="why-text">[Your text will go here]</p>
-    </section>
+    <!-- WHY TAB -->
+    <div id="why" class="tab-content">
+        <h2>Why Chess Is Important</h2>
+        <p>[Your text will go here]</p>
+    </div>
 
-    <!-- HOW IS CHESS IMPORTANT -->
-    <section id="how" class="section">
-        <h2>How is Chess Important</h2>
-        <p id="how-text">[Your text will go here]</p>
-    </section>
+    <!-- HOW TAB -->
+    <div id="how" class="tab-content">
+        <h2>How Chess Is Important</h2>
+        <p>[Your text will go here]</p>
+    </div>
 
-    <!-- GALLERY -->
-    <section id="gallery" class="section">
+    <!-- GALLERY TAB -->
+    <div id="gallery" class="tab-content">
         <h2>Gallery</h2>
         <div class="gallery-container">
-            <!-- Images will be added here later -->
+            <!-- Images will be added here -->
         </div>
-    </section>
+    </div>
 
-    <!-- FAMOUS BOOKS -->
-    <section id="books" class="section">
+    <!-- BOOKS TAB -->
+    <div id="books" class="tab-content">
         <h2>Famous Chess Books</h2>
         <div class="books-container">
             <!-- Book images + titles will go here -->
         </div>
-    </section>
+    </div>
 
-    <!-- OPENINGS -->
-    <section id="openings" class="section">
+    <!-- OPENINGS TAB -->
+    <div id="openings" class="tab-content">
         <h2>Chess Openings</h2>
         <div class="openings-container">
             <!-- Openings + summaries will go here -->
         </div>
-    </section>
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            // Hide all tab content
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(c => c.classList.remove('active'));
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(b => b.classList.remove('active'));
+
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+
+            // Highlight selected button
+            event.target.classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
