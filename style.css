@@ -7,60 +7,61 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* NAVIGATION BAR */
-nav {
-    width: 100%;
+/* TABS NAVIGATION */
+.tabs {
+    display: flex;
+    justify-content: center;
     background-color: #111;
     padding: 15px 0;
     position: fixed;
     top: 0;
-    left: 0;
-    z-index: 100;
+    width: 100%;
+    z-index: 10;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li a {
+.tab-button {
+    background: none;
+    border: none;
     color: white;
-    text-decoration: none;
     font-size: 18px;
+    margin: 0 20px;
+    cursor: pointer;
+    padding: 10px 15px;
     transition: 0.3s;
 }
 
-nav ul li a:hover {
+.tab-button:hover {
     color: gray;
 }
 
-/* SECTIONS */
-.section {
-    padding: 120px 40px 80px;
+.tab-button.active {
+    border-bottom: 2px solid white;
+}
+
+/* TAB CONTENT */
+.tab-content {
+    display: none;
+    padding: 120px 40px;
     text-align: center;
 }
 
-/* HOME SECTION SPECIAL STYLING */
-.home-section {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.tab-content.active {
+    display: block;
 }
 
-.home-section h1 {
+/* HOME TAB SPECIAL STYLING */
+.home-title {
     font-size: 90px;
-    margin: 0;
+    margin-top: 150px;
 }
 
-.author {
+.home-author {
     font-size: 18px;
-    margin-top: 20px;
     opacity: 0.7;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* GALLERY */
@@ -68,12 +69,13 @@ nav ul li a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
 }
 
 .gallery-container img {
     width: 300px;
     border: 2px solid white;
+    border-radius: 4px;
 }
 
 /* BOOKS */
@@ -87,6 +89,7 @@ nav ul li a:hover {
 .books-container img {
     width: 200px;
     border: 2px solid white;
+    border-radius: 4px;
 }
 
 /* OPENINGS */
@@ -94,8 +97,4 @@ nav ul li a:hover {
     max-width: 800px;
     margin: auto;
     text-align: left;
-}
-
-.openings-container .opening {
-    margin-bottom: 25px;
 }
