@@ -53,7 +53,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 140px;
 }
 
 .home-left {
@@ -82,39 +81,4 @@ body {
     max-width: 400px;
     border: 2px solid white;
     border-radius: 6px;
-}
-
-/* GALLERY */
-.gallery-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-}
-
-.gallery-container img {
-    width: 300px;
-    border: 2px solid white;
-    border-radius: 4px;
-}
-
-/* BOOKS */
-.books-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
-
-.books-container img {
-    width: 200px;
-    border: 2px solid white;
-    border-radius: 4px;
-}
-
-/* OPENINGS */
-.openings-container {
-    max-width: 800px;
-    margin: auto;
-    text-align: left;
 }
