@@ -19,9 +19,20 @@
     </div>
 
     <!-- HOME TAB -->
-    <div id="home" class="tab-content active">
-        <h1 class="home-title">Chess.</h1>
-        <p class="home-author">By Zhangir Yestayev</p>
+    <div id="home" class="tab-content active home-layout">
+        <div class="home-left">
+            <h1 class="home-title">Chess.</h1>
+            <p class="home-description">
+                a board game of strategic skill for two players, played on a checkered board.
+                Each player begins the game with sixteen pieces that are moved and used to capture
+                opposing pieces according to precise rules. The object is to put the opponent's king
+                under a direct attack from which escape is impossible (checkmate).
+            </p>
+        </div>
+
+        <div class="home-right">
+            <img id="home-image" src="home-image.png" alt="Chess Image">
+        </div>
     </div>
 
     <!-- WHY TAB -->
@@ -56,23 +67,14 @@
 
     <script>
         function openTab(tabName) {
-            // Hide all tab content
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.classList.remove('active');
-            });
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
 
-            // Remove active state from all buttons
-            document.querySelectorAll('.tab-button').forEach(btn => {
-                btn.classList.remove('active');
-            });
-
-            // Show selected tab
             document.getElementById(tabName).classList.add('active');
-
-            // Highlight clicked button
             event.target.classList.add('active');
         }
     </script>
 
 </body>
 </html>
+
